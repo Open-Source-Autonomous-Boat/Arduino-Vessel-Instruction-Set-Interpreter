@@ -1,17 +1,17 @@
-#include <QString>
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <vector>
 
-#include "parser/info.h"
-#include "parser/types.h"
+#include "info.h"
+#include "types.h"
+#include "utils.h"
 #pragma once
 
 class VISLParser {
+ public:
   VISLParser();
   ~VISLParser();
-
- public:
   // Opens .vis file
   void OpenFile(std::string path);
   void CloseFile();

@@ -1,4 +1,9 @@
 #pragma once
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum visl_types {
   visl_h1,
   visl_c1,
@@ -8,3 +13,6 @@ enum visl_types {
   visl_ast, // [*]
 };
 
+#ifdef __cplusplus
+}
+#endif

@@ -1,11 +1,4 @@
-#include "parser/utils.h"
-
-#include <fstream>
-#include <ios>
-#include <iostream>
-#include <regex>
-#include <sstream>
-#include <string>
+#include "../include/utils.h"
 
 std::vector<std::string> string_utils::split_string(std::string text,
                                                     char delim) {

@@ -1,13 +1,4 @@
-#include "parser/parser.h"
-
-#include <fstream>
-#include <ios>
-#include <iostream>
-#include <regex>
-#include <sstream>
-#include <string>
-
-#include "parser/utils.h"
+#include "../include/parser.h"
 
 VISLParser::VISLParser(){};
 VISLParser::~VISLParser() { delete this->file; }
@@ -21,7 +12,7 @@ void VISLParser::OpenFile(std::string path) {
 }
 
 void VISLParser::CloseFile() {
-  if (!this->is_opened && !this->file) {
+  if (!this->is_opened && !this->file) { // If file is not opened anyway
     std::cerr << "Can't close closed file" << std::endl;
     return;
   }
