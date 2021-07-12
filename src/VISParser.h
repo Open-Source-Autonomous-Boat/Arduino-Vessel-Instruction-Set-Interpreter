@@ -3,15 +3,15 @@
 #include <string>
 #include <vector>
 
-#include "info.h"
-#include "types.h"
-#include "utils.h"
+#include "VISInfo.h"
+#include "VISTypes.h"
+#include "VISUtils.h"
 #pragma once
 
-class VISLParser {
+class VISParser {
  public:
-  VISLParser();
-  ~VISLParser();
+  VISParser();
+  ~VISParser();
   // Opens .vis file
   void OpenFile(std::string path);
   void CloseFile();
