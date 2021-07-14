@@ -26,7 +26,7 @@ class VISParser {
   void DetermineTypeFromLine(std::vector<std::string> tokens);
   // Properties
   std::vector<std::string> tokens;
-  std::ifstream *file;
+  std::ifstream file;
   bool is_opened;
   visl_types data;
 };

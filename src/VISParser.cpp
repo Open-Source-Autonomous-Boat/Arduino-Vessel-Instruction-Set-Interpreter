@@ -1,14 +1,14 @@
 #include "VISParser.h"
 
 VISParser::VISParser(){};
-VISParser::~VISParser() { delete this->file; }  // Deletes dangling pointer
+VISParser::~VISParser() {}
 
 /* Opens file
  * @param path: path to file
  */
 void VISParser::OpenFile(std::string path) {
   // Opens file with ifstream
-  this->file->open(path);
+  this->file.open(path);
   // Sets boolean that states that file is open
   // TODO: Isn't this redundent?
   this->is_opened = true;
@@ -26,7 +26,7 @@ void VISParser::CloseFile() {
     return;
   }
   // Close file
-  this->file->close();
+  this->file.close();
   // Resets bool
   this->is_opened = false;
   return;
@@ -39,7 +39,7 @@ void VISParser::Prepare() {
   // Init empty "line" string
   std::string line;
   // For each line in file...
-  for (std::string tmp; std::getline(*this->file, tmp);) {
+  for (std::string tmp; std::getline(this->file, tmp);) {
     if (tmp.rfind("(#|//)", 0)) {  // Strip comments out
       continue;
     }
