@@ -28,7 +28,6 @@ class VISParser {
   // Properties
   std::vector<std::string> tokens;
   std::ifstream file;
-  bool is_opened = false;
   visl_types data = visl_types::visl_emp;
 };
 #else
