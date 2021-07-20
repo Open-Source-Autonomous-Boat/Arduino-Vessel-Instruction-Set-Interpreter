@@ -1,5 +1,10 @@
 #include "VISUtils.h"
 
+
+#ifndef UNICODE
+#define UNICODE
+#endif
+
 std::vector<std::string> string_utils::split_string(std::string text,
                                                     char delim) {
   std::string tmp;

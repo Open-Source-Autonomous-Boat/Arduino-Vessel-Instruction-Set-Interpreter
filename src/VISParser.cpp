@@ -1,5 +1,9 @@
 #include "VISParser.h"
 
+#ifndef UNICODE
+#define UNICODE
+#endif
+
 VISParser::VISParser(){};
 VISParser::~VISParser() {}
 
