@@ -1,5 +1,9 @@
 #include "VISParser.h"
 
+#ifndef UNICODE
+#define UNICODE
+#endif
+
 VISParser::VISParser(){};
 VISParser::~VISParser() {}
 
@@ -9,9 +13,6 @@ VISParser::~VISParser() {}
 void VISParser::OpenFile(std::string path) {
   // Opens file with ifstream
   this->file.open(path);
-  // Sets boolean that states that file is open
-  // TODO: Isn't this redundent?
-  this->is_opened = true;
   // Strips unneeded characters and seperates lines into vector entries
   this->Prepare();
   // Parse file
@@ -21,14 +22,12 @@ void VISParser::OpenFile(std::string path) {
 
 /* Closes file */
 void VISParser::CloseFile() {
-  if (!this->is_opened && !this->file) {  // If file is not opened anyway
+  if (!this->file.is_open()) {  // If file is not opened anyway
     std::cerr << "Can't close closed file" << std::endl;
     return;
   }
   // Close file
   this->file.close();
-  // Resets bool
-  this->is_opened = false;
   return;
 }
 
@@ -40,7 +39,8 @@ void VISParser::Prepare() {
   std::string line;
   // For each line in file...
   for (std::string tmp; std::getline(this->file, tmp);) {
-    if (tmp.rfind("(#|//)", 0)) {  // Strip comments out
+    if (tmp.rfind("#", 0) == 0) {  // Strip comments out
+      /* TODO: This catches non comments */
       continue;
     }
     // Concancate into string
@@ -50,7 +50,7 @@ void VISParser::Prepare() {
   tokens = string_utils::split_string(line, ';');
   for (auto &i : tokens) {  // For each line in file...
     // Strip whitespace
-    string_utils::strip_string(i, ' ');
+    string_utils::strip_string(&i, ' ');
   }
   // Set class property (tokens) with local vector (tokens)
   // TODO: Set new name
@@ -61,7 +61,7 @@ void VISParser::Prepare() {
 void VISParser::Parse() {
   // WIP
   for (auto &i : this->tokens) {
-    std::cerr << i << std::endl;
+    std::cout << i << std::endl;
   }
 }
 

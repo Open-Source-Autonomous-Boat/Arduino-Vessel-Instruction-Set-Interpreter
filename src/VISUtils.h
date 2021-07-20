@@ -8,5 +8,5 @@
 
 namespace string_utils {
 std::vector<std::string> split_string(std::string text, char delim);
-void strip_string(std::string text, char delim);
+void strip_string(std::string *text, char delim);
 }

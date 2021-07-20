@@ -1,5 +1,6 @@
 #ifndef VIS_CWRAPPER_H
 #define VIS_CWRAPPER_H
+#include "VISParser.h"
 
 /* Gotta make it C89 compat */
 
@@ -26,13 +27,12 @@
 #ifdef __cplusplus
 extern "C" {
 /* Declare a struct for C to use */
-typedef struct VISParser VISParser;
 
 /* Gets class as struct */
-VISParser *getVISLParser();
-void VISOpenFile(VISParser *parser, char *filename);
-void VISCloseFile(VISParser *parser);
-void delVISParser(VISParser *parser);
+extern VISParser *getVISParser();
+extern void VISOpenFile(VISParser *parser, char *filename);
+extern void VISCloseFile(VISParser *parser);
+extern void delVISParser(VISParser *parser);
 }
 #endif
 

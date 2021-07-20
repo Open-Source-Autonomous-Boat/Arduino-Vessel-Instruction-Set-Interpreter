@@ -1,3 +1,4 @@
+#ifdef __cplusplus
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -27,6 +28,8 @@ class VISParser {
   // Properties
   std::vector<std::string> tokens;
   std::ifstream file;
-  bool is_opened;
-  visl_types data;
+  visl_types data = visl_types::visl_emp;
 };
+#else
+typedef struct VISParser VISParser;
+#endif
