@@ -1,4 +1,4 @@
-CC=g++
+CC=c++
 FLAGS=-O2 -pipe -Wall -Wextra -march=native
 SRC_DIR=./src
 EXPORT=lib/libVIS.a

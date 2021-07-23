@@ -60,6 +60,7 @@ void VISParser::Prepare() {
 /* Parse file */
 void VISParser::Parse() {
   // WIP
+  // TODO: Actually parse file
   for (auto &i : this->tokens) {
     std::cout << i << std::endl;
   }
