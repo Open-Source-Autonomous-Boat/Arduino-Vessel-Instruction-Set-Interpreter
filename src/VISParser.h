@@ -13,7 +13,9 @@ class VISParser {
  public:
   VISParser();
   ~VISParser();
-  // Opens .vis file
+  /* Opens .vis file
+   * @param path: path to file
+   */
   void OpenFile(std::string path);
   void CloseFile();
   // Parses open file
@@ -24,6 +26,12 @@ class VISParser {
 
  private:
   // Methods
+  /*
+   * Doesn't do anything
+   * ---
+   * TODO: Give it some function
+   * Have it take the type from line, and parse it somewhere idk
+   */
   void DetermineTypeFromLine(std::vector<std::string> tokens);
   // Properties
   std::vector<std::string> tokens;

@@ -7,9 +7,6 @@
 VISParser::VISParser(){};
 VISParser::~VISParser() {}
 
-/* Opens file
- * @param path: path to file
- */
 void VISParser::OpenFile(std::string path) {
   // Opens file with ifstream
   this->file.open(path);

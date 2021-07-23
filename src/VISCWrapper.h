@@ -4,19 +4,17 @@
 
 /* Gotta make it C89 compat */
 
-
 /*
  * How to use this lib in C?
  * ---
- *  1). First compile this lib into an object
- *  (g++ -c parser.cpp -o parser.o)
+ *  1). First compile this lib into a static library
+ *  (make makedir)
+ *  (make)
  *  and
- *  (g++ -c cwrapper.cpp -o cwrapper.o)
- *  2). Then include this wrapper into your C code (#include "cwrapper.h")
+ *  2). Then include this wrapper into your C code (#include "VISCWrapper.h")
  *  3). Use code in your C code
- *  4). Compile with C compiler (gcc -c main.c -o main.o)
- *  5). Compile again but with C++ compiler
- *  (g++ main.o cwrapper.o parser.h -o program)
+ *  5). Compile
+ *  (gcc main.c -I<folder to vis lib> -libVIS -o main)
  *  4). Profit
  * ---
  *  Or, just use CMake (:
@@ -30,8 +28,20 @@ extern "C" {
 
 /* Gets class as struct */
 extern VISParser *getVISParser();
-extern void VISOpenFile(VISParser *parser, char *filename);
+/*
+ * C wrapper to VISParser::OpenFile(std::string path)
+ * @param[in,out] parser The C compat(?) struct
+ * @param[in] path The path to file
+ */
+extern void VISOpenFile(VISParser *parser, char *path);
+/*
+ * C wrapper to VISParser::CloseFile()
+ */
 extern void VISCloseFile(VISParser *parser);
+/*
+ * C function to delete struct/class
+ * @param[in] parser Deletes it
+ */
 extern void delVISParser(VISParser *parser);
 }
 #endif
