@@ -1,3 +1,0 @@
-C:/Users/troyd/Git/wip-qt/lib/vis_parser/out/build/x64-Debug/CMakeFiles/VISL.dir
-C:/Users/troyd/Git/wip-qt/lib/vis_parser/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/troyd/Git/wip-qt/lib/vis_parser/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
