@@ -30,19 +30,20 @@ extern "C" {
 extern VISParser *getVISParser();
 /*
  * C wrapper to VISParser::OpenFile(std::string path)
- * @param[in,out] parser The C compat(?) struct
- * @param[in] path The path to file
+ * @param[in,out] a_parser: The C compat(?) struct
+ * @param[in] a_path: The path to file
  */
-extern void VISOpenFile(VISParser *parser, char *path);
+extern void VISOpenFile(VISParser *a_parser, char *a_path);
 /*
  * C wrapper to VISParser::CloseFile()
+ * @param[in] a_parser: The C compat(?) struct
  */
-extern void VISCloseFile(VISParser *parser);
+extern void VISCloseFile(VISParser *a_parser);
 /*
  * C function to delete struct/class
- * @param[in] parser Deletes it
+ * @param[in] a_parser: The C compat(?) struct
  */
-extern void delVISParser(VISParser *parser);
+extern void delVISParser(VISParser *a_parser);
 }
 #endif
 

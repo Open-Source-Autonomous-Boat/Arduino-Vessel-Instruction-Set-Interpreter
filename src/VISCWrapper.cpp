@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "VISFile.h"
 #include "VISParser.h"
 
 extern "C" {
@@ -9,11 +10,12 @@ VISParser* getVISParser() {
   /* Returns class to C struct */
   return new VISParser();
 }
-void VISOpenFile(VISParser* parser, char* path) {
+void VISOpenFile(VISParser* a_parser, char* path) {
   /* Convert to C++ readable string */
   std::string path_cpp(path);
   /* Open file with class handle */
-  parser->OpenFile(path);
+  std::unique_ptr<VISFile> file(new VISFile(path_cpp));
+  a_parser->OpenFile(file.release());
 }
 
 void VISCloseFile(VISParser* parser) { parser->CloseFile(); }

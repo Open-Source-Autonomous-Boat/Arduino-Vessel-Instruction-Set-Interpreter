@@ -1,27 +1,44 @@
+#ifndef VISPARSER_H
+#define VISPARSER_H
+
 #ifdef __cplusplus
 #include <fstream>
 #include <iostream>
+#include <memory>
 #include <string>
 #include <vector>
 
+#include "VISFile.h"
 #include "VISInfo.h"
 #include "VISTypes.h"
 #include "VISUtils.h"
-#pragma once
 
 class VISParser {
  public:
   VISParser();
   ~VISParser();
-  /* Opens .vis file
-   * @param path: path to file
+  /*
+   * Opens .vis file
+   * @param[in] a_file: pointer to VISFile class object
+   * TODO: Should this be deprecated?
    */
-  void OpenFile(std::string path);
+  void OpenFile(VISFile* a_file);
+  /* Closes .vis file */
   void CloseFile();
-  // Parses open file
+  /*
+   * Parses independent line in VIS
+   * @param[in] a_line: Line in VIS
+   */
+  void ParseLine(std::string a_line);
 
  protected:
-  void Prepare();
+  /*
+   * Prepares VIS file
+   */
+  void PrepareFile();
+  /*
+   * Actually parse it
+   */
   void Parse();
 
  private:
@@ -32,12 +49,12 @@ class VISParser {
    * TODO: Give it some function
    * Have it take the type from line, and parse it somewhere idk
    */
-  void DetermineTypeFromLine(std::vector<std::string> tokens);
+  void DetermineTypeFromLine(std::vector<std::string> a_tokens);
   // Properties
-  std::vector<std::string> tokens;
-  std::ifstream file;
-  visl_types data = visl_types::visl_emp;
+  std::vector<std::string> m_tokens;
+  std::unique_ptr<VISFile> m_file;
 };
 #else
 typedef struct VISParser VISParser;
+#endif
 #endif

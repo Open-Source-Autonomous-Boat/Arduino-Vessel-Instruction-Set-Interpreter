@@ -4,40 +4,47 @@
 #define UNICODE
 #endif
 
-VISParser::VISParser(){};
-VISParser::~VISParser() {}
+#ifdef __cplusplus
 
-void VISParser::OpenFile(std::string path) {
+VISParser::VISParser(){};
+VISParser::~VISParser() { delete this->m_file.release(); }
+
+void VISParser::OpenFile(VISFile *a_file) {
   // Opens file with ifstream
-  this->file.open(path);
+  this->m_file = std::make_unique<VISFile>(a_file->GetFilePath());
   // Strips unneeded characters and seperates lines into vector entries
-  this->Prepare();
+  this->PrepareFile();
   // Parse file
   this->Parse();
   return;
 }
 
-/* Closes file */
-void VISParser::CloseFile() {
-  if (!this->file.is_open()) {  // If file is not opened anyway
-    std::cerr << "Can't close closed file" << std::endl;
+void VISParser::ParseLine(std::string line) {
+  // Init vector of tokens
+  std::vector<std::string> tokens;
+  if (line.rfind("#", 0) == 0) {  // Stops if comment
     return;
   }
-  // Close file
-  this->file.close();
+  tokens = string_utils::split_string(line, ';');
+  for (auto &i : tokens) {
+    string_utils::strip_string(&i, ' ');
+  }
+  this->Parse();
   return;
 }
 
+/* Closes file */
+void VISParser::CloseFile() { this->m_file.reset(new VISFile(NULL)); }
+
 /* Prepare file for parsing */
-void VISParser::Prepare() {
+void VISParser::PrepareFile() {
   // Init vector of tokens
   std::vector<std::string> tokens;
   // Init empty "line" string
   std::string line;
   // For each line in file...
-  for (std::string tmp; std::getline(this->file, tmp);) {
+  for (std::string tmp; std::getline(*this->m_file->GetFileObject(), tmp);) {
     if (tmp.rfind("#", 0) == 0) {  // Strip comments out
-      /* TODO: This catches non comments */
       continue;
     }
     // Concancate into string
@@ -51,16 +58,17 @@ void VISParser::Prepare() {
   }
   // Set class property (tokens) with local vector (tokens)
   // TODO: Set new name
-  this->tokens = tokens;
+  this->m_tokens = tokens;
 }
 
 /* Parse file */
 void VISParser::Parse() {
   // WIP
   // TODO: Actually parse file
-  for (auto &i : this->tokens) {
+  for (auto &i : this->m_tokens) {
     std::cout << i << std::endl;
   }
 }
 
 void VISParser::DetermineTypeFromLine(std::vector<std::string> tokens) {}
+#endif
