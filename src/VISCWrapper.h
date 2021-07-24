@@ -1,5 +1,6 @@
 #ifndef VIS_CWRAPPER_H
 #define VIS_CWRAPPER_H
+#include <string.h>
 #include "VISParser.h"
 
 /* Gotta make it C89 compat */
@@ -26,25 +27,42 @@
 extern "C" {
 /* Declare a struct for C to use */
 
-/* Gets class as struct */
+/* Gets parser class as struct */
 extern VISParser *getVISParser();
+
+/*
+ * Gets file class as struct
+ * @param[in] a_path: Path to file
+ */
+extern VISFile *getVISFile(char* a_path);
 /*
  * C wrapper to VISParser::OpenFile(std::string path)
  * @param[in,out] a_parser: The C compat(?) struct
  * @param[in] a_path: The path to file
  */
-extern void VISOpenFile(VISParser *a_parser, char *a_path);
+extern void VISParserOpenFile(VISParser *a_parser, char *a_path);
 /*
  * C wrapper to VISParser::CloseFile()
  * @param[in] a_parser: The C compat(?) struct
  */
-extern void VISCloseFile(VISParser *a_parser);
+extern void VISParserCloseFile(VISParser *a_parser);
 /*
  * C function to delete struct/class
  * @param[in] a_parser: The C compat(?) struct
  */
 extern void delVISParser(VISParser *a_parser);
+
+/*
+ * Gets file object, C can do this right?
+ * @param[in] a_file: The C compat(?) struct
+ */
+extern void* VISFileGetObject(VISFile* a_file);
+
+/*
+ * Gets file path
+ * @param[in] a_file: The C compat(?) struct
+ */
+extern char* VISFileGetPath(VISFile* a_file);
 }
 #endif
-
 #endif /* VIS_CWRAPPER_H */
