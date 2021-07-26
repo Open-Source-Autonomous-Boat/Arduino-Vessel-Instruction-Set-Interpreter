@@ -52,7 +52,7 @@ class VISParser {
   void DetermineTypeFromLine(std::vector<std::string> a_tokens);
   // Properties
   std::vector<std::string> m_tokens;
-  std::unique_ptr<VISFile> m_file;
+  VISFile* m_file;
 };
 #else
 typedef struct VISParser VISParser;

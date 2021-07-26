@@ -7,11 +7,11 @@
 #ifdef __cplusplus
 
 VISParser::VISParser(){};
-VISParser::~VISParser() { delete this->m_file.release(); }
+VISParser::~VISParser() {}
 
 void VISParser::OpenFile(VISFile *a_file) {
   // Opens file with ifstream
-  this->m_file = std::make_unique<VISFile>(a_file->GetFilePath());
+  this->m_file = a_file;
   // Strips unneeded characters and seperates lines into vector entries
   this->PrepareFile();
   // Parse file
@@ -34,7 +34,7 @@ void VISParser::ParseLine(std::string line) {
 }
 
 /* Closes file */
-void VISParser::CloseFile() { this->m_file.reset(new VISFile(NULL)); }
+void VISParser::CloseFile() { this->m_file = nullptr; }
 
 /* Prepare file for parsing */
 void VISParser::PrepareFile() {
