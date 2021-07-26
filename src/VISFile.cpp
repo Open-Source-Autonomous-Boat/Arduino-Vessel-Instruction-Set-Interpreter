@@ -11,12 +11,7 @@ VISFile::VISFile(std::string a_path) {
   return;
 }
 
-VISFile::~VISFile() {
-  if (this->m_file.get()->is_open()) {
-    this->m_file.get()->close();
-  }
-  delete this->m_file.release();
-}
+VISFile::~VISFile() {} /* idk */
 
 std::string VISFile::GetFilePath() { return this->m_path; };
 std::fstream* VISFile::GetFileObject() { return this->m_file.get(); }
