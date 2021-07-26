@@ -7,13 +7,13 @@ VISFile::VISFile(std::string a_path) {
     return;
   }
   this->m_path = a_path;
-  this->m_file->open(a_path);
+  this->m_file.get()->open(a_path);
   return;
 }
 
 VISFile::~VISFile() {
-  if (this->m_file->is_open()) {
-    this->m_file->close();
+  if (this->m_file.get()->is_open()) {
+    this->m_file.get()->close();
   }
   delete this->m_file.release();
 }
