@@ -10,12 +10,10 @@ VISParser* getVISParser() {
   /* Returns class to C struct */
   return new VISParser();
 }
-void VISParserOpenFile(VISParser* a_parser, char* path) {
+void VISParserOpenFile(VISParser* a_parser, VISFile* a_file) {
   /* Convert to C++ readable string */
-  std::string path_cpp(path);
   /* Open file with class handle */
-  std::unique_ptr<VISFile> file(new VISFile(path_cpp));
-  a_parser->OpenFile(file.release());
+  a_parser->OpenFile(a_file);
 }
 
 void VISParserCloseFile(VISParser* parser) { parser->CloseFile(); }

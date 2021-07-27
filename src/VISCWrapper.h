@@ -42,7 +42,7 @@ VISFile *getVISFile(char *a_path);
  * @param[in,out] a_parser: The C compat(?) struct
  * @param[in] a_path: The path to file
  */
-void VISParserOpenFile(VISParser *a_parser, char *a_path);
+void VISParserOpenFile(VISParser *a_parser, VISFile *a_file);
 /*
  * C wrapper to VISParser::CloseFile()
  * @param[in] a_parser: The C compat(?) struct
