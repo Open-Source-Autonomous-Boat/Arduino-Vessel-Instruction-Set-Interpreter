@@ -65,10 +65,8 @@ void VISParser::PrepareFile() {
 void VISParser::Parse() {
   // WIP
   // TODO: Actually parse file
-  for (auto &i : this->m_tokens) {
-    std::cout << i << std::endl;
-  }
 }
 
-void VISParser::DetermineTypeFromLine(std::vector<std::string> tokens) {}
+void VISParser::DetermineTypeFromLine(std::vector<std::string> tokens) {
+}
 #endif
