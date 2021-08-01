@@ -1,7 +1,5 @@
 #include "VISCWrapper.h" /* Shouldn't the build system handle this include? */
 
-#include <string>
-
 #include "VISFile.h"
 #include "VISParser.h"
 
@@ -25,10 +23,13 @@ VISFile* getVISFile(char* a_path) { return new VISFile(std::string(a_path)); }
 void* VISFileGetObject(VISFile* a_file) { return a_file->GetFileObject(); }
 
 char* VISFileGetPath(VISFile* a_file) {
+  // Get string of path
   std::string path = a_file->GetFilePath();
-  char* retval = new char[path.size()+1];
-  std::copy(path.begin(),path.end(),retval);
-  retval[path.size()] = '\0';
+  // Initialize non-null char array (using C style casts)
+  char* retval = (char*)"";  // I hate it but it works
+  // Copy string
+  std::copy(path.begin(), path.end() + 1, retval);
+  // Returns string
   return retval;
 }
 }

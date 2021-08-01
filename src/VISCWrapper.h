@@ -1,6 +1,5 @@
 #ifndef VIS_CWRAPPER_H
 #define VIS_CWRAPPER_H
-#include <string.h>
 
 #include "VISParser.h"
 
@@ -25,6 +24,7 @@
  */
 
 #ifdef __cplusplus
+#include <string>
 extern "C" {
 #endif
 /* Declare a struct for C to use */
