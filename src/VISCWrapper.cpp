@@ -25,11 +25,10 @@ VISFile* getVISFile(char* a_path) { return new VISFile(std::string(a_path)); }
 void* VISFileGetObject(VISFile* a_file) { return a_file->GetFileObject(); }
 
 char* VISFileGetPath(VISFile* a_file) {
-  // Initializes pointer to null
-  char* tmpstr = nullptr;
-  // Copies string (convert to c string) to char pointer
-  std::strcpy(tmpstr, a_file->GetFilePath().c_str());
-  // Return pointer
-  return tmpstr;
+  std::string path = a_file->GetFilePath();
+  char* retval = new char[path.size()+1];
+  std::copy(path.begin(),path.end(),retval);
+  retval[path.size()] = '\0';
+  return retval;
 }
 }
