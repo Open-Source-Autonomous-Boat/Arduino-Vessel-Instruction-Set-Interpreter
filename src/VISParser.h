@@ -36,10 +36,6 @@ class VISParser {
    * Prepares VIS file
    */
   void PrepareFile();
-  /*
-   * Actually parse it
-   */
-  void Parse();
 
  private:
   // Methods
@@ -49,9 +45,14 @@ class VISParser {
    * TODO: Give it some function
    * Have it take the type from line, and parse it somewhere idk
    */
+  /*
+   * Actually parse it
+   */
+  void Parse();
   void DetermineTypeFromLine(std::vector<std::string> a_tokens);
   // Properties
-  std::vector<std::string> m_tokens;
+  std::vector<std::string> m_lines;
+  std::unique_ptr<visl_cpp::tokens_type> m_tokens; // HACK: Is this ok?
   VISFile* m_file = nullptr;
 };
 #else

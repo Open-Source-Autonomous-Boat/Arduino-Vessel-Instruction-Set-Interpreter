@@ -14,7 +14,13 @@ std::vector<std::string> string_utils::split_string(std::string text,
   return tmp_vector;
 }
 
-void string_utils::strip_string(std::string *text, char delim) {
+void string_utils::strip_string(std::string* text, char delim) {
   text->erase(std::remove(text->begin(), text->end(), delim), text->end());
   return;
+}
+
+template <typename T>
+void token_utils::map_insert(visl_cpp::tokens_type* tokens, visl_tokens type,
+                             T value) {
+  tokens->insert(std::pair<visl_tokens, std::string>(type, std::string(value)));
 }

@@ -3,3 +3,6 @@ lib/
 .clang-format
 build/
 /.vs
+CMakeLists.txt.user
+.kdev4
+.cache

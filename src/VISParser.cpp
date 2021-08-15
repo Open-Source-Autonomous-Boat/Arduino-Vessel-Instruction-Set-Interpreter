@@ -38,8 +38,8 @@ void VISParser::CloseFile() { this->m_file = nullptr; }
 
 /* Prepare file for parsing */
 void VISParser::PrepareFile() {
-  // Init vector of tokens
-  std::vector<std::string> tokens;
+  // Init vector of lines
+  std::vector<std::string> lines;
   // Init empty "line" string
   std::string line;
   // For each line in file...
@@ -51,22 +51,24 @@ void VISParser::PrepareFile() {
     line += tmp;
   }
   // Split string by semi-colon (;)
-  tokens = string_utils::split_string(line, ';');
-  for (auto &i : tokens) {  // For each line in file...
+  lines = string_utils::split_string(line, ';');
+  for (auto &i : lines) {  // For each line in file...
     // Strip whitespace
     string_utils::strip_string(&i, ' ');
   }
-  // Set class property (tokens) with local vector (tokens)
-  // TODO: Set new name
-  this->m_tokens = tokens;
+  // Set class property (lines) with local vector (tokens)
+  this->m_lines = lines;
 }
 
 /* Parse file */
 void VISParser::Parse() {
   // WIP
-  // TODO: Actually parse file
+  visl_cpp::tokens_type::iterator max_pos = this->m_tokens->begin();
+  for (auto &i : this->m_lines) {
+    visl_cpp::tokens_type line_tokens;
+    token_utils::map_insert(this->m_tokens.get(), visl_tokens::visl_ast, "");
+  }
 }
 
-void VISParser::DetermineTypeFromLine(std::vector<std::string> tokens) {
-}
+void VISParser::DetermineTypeFromLine(std::vector<std::string> a_tokens) {}
 #endif
