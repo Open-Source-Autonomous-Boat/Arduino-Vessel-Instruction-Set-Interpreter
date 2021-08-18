@@ -19,6 +19,13 @@ void string_utils::strip_string(std::string* text, char delim) {
   return;
 }
 
+bool string_utils::regex_find(
+    std::string a_text, std::string a_regexp,
+    std::regex_constants::syntax_option_type a_re_flags) {
+  return (std::regex_search(a_text, std::regex(a_regexp, a_re_flags))) ? true
+                                                                       : false;
+}
+
 template <typename T>
 void token_utils::map_insert(visl_cpp::tokens_type* tokens, visl_tokens type,
                              T value) {

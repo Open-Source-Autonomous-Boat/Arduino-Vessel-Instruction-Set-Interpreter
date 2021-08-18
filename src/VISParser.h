@@ -49,7 +49,7 @@ class VISParser {
    * Actually parse it
    */
   void Parse();
-  void DetermineTypeFromLine(std::vector<std::string> a_tokens);
+  visl_tokens DetermineTypeFromLine(std::string a_line);
   // Properties
   std::vector<std::string> m_lines;
   std::unique_ptr<visl_cpp::tokens_type> m_tokens; // HACK: Is this ok?
