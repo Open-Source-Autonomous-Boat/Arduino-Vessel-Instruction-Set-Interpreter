@@ -69,6 +69,9 @@ void VISParser::Parse() {
     visl_cpp::tokens_type line_tokens;
     auto local_tokens = string_utils::split_string(i, ',');
     auto instruction = this->DetermineTypeFromLine(i);
+    if (instruction == visl_tokens::visl_emp) {
+      continue;
+    }
     token_utils::map_insert(this->m_tokens.get(), instruction, "");
   }
 }
@@ -78,6 +81,6 @@ visl_tokens VISParser::DetermineTypeFromLine(std::string a_line) {
   if (string_utils::regex_find(a_line, "H1", def_flags)) {
     return visl_tokens::visl_h1;
   };
-  return visl_tokens::visl_ast;
+  return visl_tokens::visl_emp;
 }
 #endif
