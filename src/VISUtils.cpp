@@ -26,8 +26,7 @@ bool string_utils::regex_find(
                                                                        : false;
 }
 
-template <typename T>
 void token_utils::map_insert(visl_cpp::tokens_type* tokens, visl_tokens type,
-                             T value) {
-  tokens->insert(std::pair<visl_tokens, std::string>(type, std::string(value)));
+                             std::string value) {
+  tokens->insert(std::pair<visl_tokens, std::string>(type, value));
 }

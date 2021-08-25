@@ -4,7 +4,6 @@
 #include <regex>
 #include <sstream>
 #include <string>
-#include <regex>
 
 #include "VISTypes.h"
 #pragma once
@@ -31,7 +30,8 @@ void strip_string(std::string* a_text, char a_delim);
  * @param[in] a_re_flags: Regex bitmask flags (std::regex_constants)
  * @return true or false
  */
-bool regex_find(std::string a_text, std::string a_regexp, std::regex_constants::syntax_option_type a_re_flags);
+bool regex_find(std::string a_text, std::string a_regexp,
+                std::regex_constants::syntax_option_type a_re_flags);
 }  // namespace string_utils
 
 namespace token_utils {
@@ -41,6 +41,6 @@ namespace token_utils {
  * @param[in] a_type: The type of the token
  * @param[in] a_value: The value corresponding to type
  */
-template <typename T>
-void map_insert(visl_cpp::tokens_type* a_tokens, visl_tokens a_type, T a_value);
+void map_insert(visl_cpp::tokens_type* a_tokens, visl_tokens a_type,
+                std::string a_value);
 }  // namespace token_utils
