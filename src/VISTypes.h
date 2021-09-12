@@ -25,6 +25,11 @@ enum visl_tokens {
 #ifdef __cplusplus
 namespace visl_cpp {
 typedef std::map<visl_tokens, std::string> tokens_type;
-}
+const std::map<visl_tokens, std::string> tok_strings{
+    {visl_tokens::visl_emp, "EMP"}, {visl_tokens::visl_h1, "H1"},
+    {visl_tokens::visl_c1, "C1"},   {visl_tokens::visl_w1, "W1"},
+    {visl_tokens::visl_w2, "W2"},   {visl_tokens::visl_u, "U"},
+    {visl_tokens::visl_ast, "AST"}};
+}  // namespace visl_cpp
 }
 #endif

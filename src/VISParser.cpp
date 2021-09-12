@@ -63,8 +63,6 @@ void VISParser::PrepareFile() {
 /* Parse file */
 void VISParser::Parse() {
   // WIP
-  visl_cpp::tokens_type::iterator max_pos =
-      this->m_tokens->begin();  // TODO: Forgot what this is for
   for (auto &i : this->m_lines) {
     visl_cpp::tokens_type line_tokens;
     auto local_tokens = string_utils::split_string(i, ',');
@@ -72,7 +70,12 @@ void VISParser::Parse() {
     if (instruction == visl_tokens::visl_emp) {
       continue;
     }
-    token_utils::map_insert(this->m_tokens.get(), instruction, "");
+    // token_utils::map_insert(this->m_tokens, instruction, "");
+    this->m_tokens.insert(std::pair<visl_tokens, std::string>(instruction, ""));
+    for (const auto &pair : this->m_tokens) {
+      std::cout << string_utils::token_stringify(instruction) << " - "
+                << pair.second;
+    } // Test
   }
 }
 

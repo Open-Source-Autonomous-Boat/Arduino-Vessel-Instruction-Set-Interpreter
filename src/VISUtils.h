@@ -32,6 +32,12 @@ void strip_string(std::string* a_text, char a_delim);
  */
 bool regex_find(std::string a_text, std::string a_regexp,
                 std::regex_constants::syntax_option_type a_re_flags);
+/*
+ * Finds string representation of VISL token
+ * @param[in] a_token: The token to find from
+ * @return string representation of token
+ */
+std::string token_stringify(visl_tokens a_token);
 }  // namespace string_utils
 
 namespace token_utils {

@@ -52,7 +52,7 @@ class VISParser {
   visl_tokens DetermineTypeFromLine(std::string a_line);
   // Properties
   std::vector<std::string> m_lines;
-  std::unique_ptr<visl_cpp::tokens_type> m_tokens; // HACK: Is this ok?
+  visl_cpp::tokens_type m_tokens; // HACK: Is this ok?
   VISFile* m_file = nullptr;
 };
 #else

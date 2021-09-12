@@ -26,6 +26,11 @@ bool string_utils::regex_find(
                                                                        : false;
 }
 
+std::string string_utils::token_stringify(visl_tokens a_token) {
+  auto ret_val = visl_cpp::tok_strings.find(a_token);
+  return (ret_val == visl_cpp::tok_strings.end()) ? "ERR" : ret_val->second;
+}
+
 void token_utils::map_insert(visl_cpp::tokens_type* tokens, visl_tokens type,
                              std::string value) {
   tokens->insert(std::pair<visl_tokens, std::string>(type, value));
