@@ -14,9 +14,9 @@ std::vector<std::string> string_utils::split_string(std::string text,
   return tmp_vector;
 }
 
-void string_utils::strip_string(std::string* text, char delim) {
-  text->erase(std::remove(text->begin(), text->end(), delim), text->end());
-  return;
+std::string string_utils::strip_string(std::string text, char delim) {
+  text.erase(std::remove(text.begin(), text.end(), delim), text.end());
+  return text;
 }
 
 bool string_utils::regex_find(

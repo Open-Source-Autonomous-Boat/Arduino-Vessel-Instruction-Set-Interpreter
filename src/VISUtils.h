@@ -22,7 +22,7 @@ std::vector<std::string> split_string(std::string a_text, char a_delim);
  * @param[in] a_delim: The deliminator to strip the string off
  * @return The stripped text
  */
-void strip_string(std::string* a_text, char a_delim);
+  std::string strip_string(std::string a_text, char a_delim);
 /*
  * Finds regex in string, returns true if found
  * @param[in] a_text: The text to find in

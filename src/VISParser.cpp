@@ -1,4 +1,8 @@
 #include "VISParser.h"
+#include <algorithm>
+
+#include "VISTypes.h"
+#include "VISUtils.h"
 
 #ifndef UNICODE
 #define UNICODE
@@ -27,7 +31,7 @@ void VISParser::ParseLine(std::string a_line) {
   }
   tokens = string_utils::split_string(a_line, ';');
   for (auto &i : tokens) {
-    string_utils::strip_string(&i, ' ');
+    i = string_utils::strip_string(i, ' ');
   }
   this->Parse();
   return;
@@ -54,7 +58,7 @@ void VISParser::PrepareFile() {
   lines = string_utils::split_string(line, ';');
   for (auto &i : lines) {  // For each line in file...
     // Strip whitespace
-    string_utils::strip_string(&i, ' ');
+    i = string_utils::strip_string(i, ' ');
   }
   // Set class property (lines) with local vector (tokens)
   this->m_lines = lines;
@@ -70,20 +74,20 @@ void VISParser::Parse() {
     if (instruction == visl_tokens::visl_emp) {
       continue;
     }
-    // token_utils::map_insert(this->m_tokens, instruction, "");
     this->m_tokens.insert(std::pair<visl_tokens, std::string>(instruction, ""));
     for (const auto &pair : this->m_tokens) {
       std::cout << string_utils::token_stringify(instruction) << " - "
                 << pair.second;
-    } // Test
+    }  // Test
   }
 }
 
 visl_tokens VISParser::DetermineTypeFromLine(std::string a_line) {
-  auto def_flags = std::regex_constants::icase | std::regex_constants::grep;
-  if (string_utils::regex_find(a_line, "H1", def_flags)) {
-    return visl_tokens::visl_h1;
-  };
-  return visl_tokens::visl_emp;
+  auto line = string_utils::split_string(a_line, ' ')[0];
+  auto tokens = visl_cpp::tok_strings;
+  auto result = std::find_if(tokens.begin(),tokens.end(),[&](const auto &&i){
+    return i->second == line;
+  });
+  return (result != tokens.end()) ? result->first : visl_tokens::visl_emp;
 }
 #endif
