@@ -85,8 +85,8 @@ void VISParser::Parse() {
 visl_tokens VISParser::DetermineTypeFromLine(std::string a_line) {
   auto line = string_utils::split_string(a_line, ' ')[0];
   auto tokens = visl_cpp::tok_strings;
-  auto result = std::find_if(tokens.begin(),tokens.end(),[&](const auto &&i){
-    return i->second == line;
+  auto result = std::find_if(tokens.begin(),tokens.end(),[&](const std::pair<visl_tokens, std::string> i){
+    return i.second == line;
   });
   return (result != tokens.end()) ? result->first : visl_tokens::visl_emp;
 }
