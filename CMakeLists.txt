@@ -15,6 +15,12 @@ list(FILTER VIS_SOURCES EXCLUDE REGEX "VIS-")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(VIS_INCLUDE_TESTER true)
 
 add_library(VISL STATIC ${VIS_SOURCES})
 target_include_directories(VISL PUBLIC "${VIS_SOURCE_DIR}")
+
+if(VIS_INCLUDE_TESTER)
+add_executable(vis-tester ${VIS_SOURCES})
+target_include_directories(vis-tester PUBLIC "${VIS_SOURCE_DIR}")
+endif()

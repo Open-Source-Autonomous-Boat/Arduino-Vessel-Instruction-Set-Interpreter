@@ -1,7 +1,10 @@
 #include <fstream>
 #include <ios>
 #include <iostream>
+#include <iterator>
+#include <ostream>
 #include <regex>
+#include <vector>
 #include <sstream>
 #include <string>
 
@@ -22,7 +25,7 @@ std::vector<std::string> split_string(std::string a_text, char a_delim);
  * @param[in] a_delim: The deliminator to strip the string off
  * @return The stripped text
  */
-  std::string strip_string(std::string a_text, char a_delim);
+std::string strip_string(std::string a_text, char a_delim);
 /*
  * Finds regex in string, returns true if found
  * @param[in] a_text: The text to find in
@@ -38,15 +41,6 @@ bool regex_find(std::string a_text, std::string a_regexp,
  * @return string representation of token
  */
 std::string token_stringify(visl_tokens a_token);
+std::string join_string(std::vector<std::string> a_vector, char a_delim);
 }  // namespace string_utils
 
-namespace token_utils {
-/*
- * Makes it easier to insert stuff
- * @param[in,out] a_tokens: The token map
- * @param[in] a_type: The type of the token
- * @param[in] a_value: The value corresponding to type
- */
-void map_insert(visl_cpp::tokens_type* a_tokens, visl_tokens a_type,
-                std::string a_value);
-}  // namespace token_utils

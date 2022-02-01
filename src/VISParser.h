@@ -13,9 +13,13 @@
 #include "VISTypes.h"
 #include "VISUtils.h"
 
+
+constexpr char VISL_DELIMITER = ',';
+constexpr char VISL_LINE_END = ';';
+
 class VISParser {
  public:
-  VISParser();
+  VISParser(VISLTokens* a_tokens_base=new VISLTokens());
   ~VISParser();
   /*
    * Opens .vis file
@@ -52,7 +56,8 @@ class VISParser {
   visl_tokens DetermineTypeFromLine(std::string a_line);
   // Properties
   std::vector<std::string> m_lines;
-  visl_cpp::tokens_type m_tokens; // HACK: Is this ok?
+  visl_cpp::tokens_args m_tokens; // HACK: Is this ok?
+  std::unique_ptr<VISLTokens> m_tokens_base;
   VISFile* m_file = nullptr;
 };
 #else

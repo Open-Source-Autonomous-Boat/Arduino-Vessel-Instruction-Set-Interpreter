@@ -1,0 +1,142 @@
+[
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/vis-tester.dir/src/VISCWrapper.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISCWrapper.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISCWrapper.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/vis-tester.dir/src/VISCWrapper.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/VISL.dir/src/VISCWrapper.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISCWrapper.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISCWrapper.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/VISL.dir/src/VISCWrapper.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/vis-tester.dir/src/VISParser.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISParser.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISParser.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/vis-tester.dir/src/VISParser.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/VISL.dir/src/VISParser.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISParser.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISParser.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/VISL.dir/src/VISParser.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/VISL.dir/src/VISTypes.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISTypes.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISTypes.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/VISL.dir/src/VISTypes.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/vis-tester.dir/src/VISTypes.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISTypes.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISTypes.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/vis-tester.dir/src/VISTypes.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/vis-tester.dir/src/VISUtils.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISUtils.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISUtils.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/vis-tester.dir/src/VISUtils.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/VISL.dir/src/VISUtils.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/VISUtils.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/VISUtils.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/VISL.dir/src/VISUtils.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/VISL.dir/src/test/main.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/test/main.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/test/main.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/VISL.dir/src/test/main.cpp.o"
+  },
+  {
+    "arguments": [
+      "/bin/c++",
+      "-I/home/troyd/Documents/github/vis-interpreter/src",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/vis-tester.dir/src/test/main.cpp.o",
+      "/home/troyd/Documents/github/vis-interpreter/src/test/main.cpp"
+    ],
+    "directory": "/home/troyd/Documents/github/vis-interpreter/build",
+    "file": "/home/troyd/Documents/github/vis-interpreter/src/test/main.cpp",
+    "output": "/home/troyd/Documents/github/vis-interpreter/build/CMakeFiles/vis-tester.dir/src/test/main.cpp.o"
+  }
+]

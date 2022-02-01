@@ -1,5 +1,10 @@
 #include "VISUtils.h"
 
+#include <algorithm>
+#include <iterator>
+#include <string>
+#include <vector>
+
 #ifndef UNICODE
 #define UNICODE
 #endif
@@ -26,12 +31,23 @@ bool string_utils::regex_find(
                                                                        : false;
 }
 
-std::string string_utils::token_stringify(visl_tokens a_token) {
-  auto ret_val = visl_cpp::tok_strings.find(a_token);
-  return (ret_val == visl_cpp::tok_strings.end()) ? "ERR" : ret_val->second;
+std::string string_utils::join_string(std::vector<std::string> a_vector,
+                                      char a_delim) {
+  std::ostringstream joined_string;
+  std::copy(a_vector.begin() + 1, a_vector.end(),
+            std::ostream_iterator<std::string>(joined_string, &a_delim));
+  std::string final_string = joined_string.str();
+  if (!final_string.empty()) {
+    final_string = strip_string(final_string, ' ');
+    final_string.pop_back();
+  }
+  std::cout << final_string << std::endl;
+  ;
+  return final_string;
 }
 
-void token_utils::map_insert(visl_cpp::tokens_type* tokens, visl_tokens type,
-                             std::string value) {
-  tokens->insert(std::pair<visl_tokens, std::string>(type, value));
+std::string string_utils::token_stringify(visl_tokens a_token) {
+  //auto ret_val = visl_cpp::tokens.find(a_token)->second.GetName();
+  return "";
 }
+
