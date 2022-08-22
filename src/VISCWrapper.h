@@ -1,6 +1,7 @@
 #ifndef VIS_CWRAPPER_H
 #define VIS_CWRAPPER_H
 
+#include "VISFile.h"
 #include "VISParser.h"
 
 /* Gotta make it C89 compat */
