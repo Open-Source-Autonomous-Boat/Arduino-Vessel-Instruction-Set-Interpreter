@@ -1,5 +1,0 @@
-#include "VISTypes.h"
-
-VISTypes::VISTypes(std::string aSource) {
-  
-}
