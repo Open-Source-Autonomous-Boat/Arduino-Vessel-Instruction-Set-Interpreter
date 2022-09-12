@@ -1,0 +1,9 @@
+#include <string>
+
+class VISTypes {
+ public:
+  VISTypes(std::string aSource);
+  VISTypes(int aSource);
+  VISTypes(float aSource);
+  VISTypes(bool aSource);
+};

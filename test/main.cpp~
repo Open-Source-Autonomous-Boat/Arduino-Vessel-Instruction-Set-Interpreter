@@ -1,0 +1,12 @@
+#include "../src/VISInterpreter.h"
+#include <ios>
+#include <iostream>
+#include <fstream>
+
+
+int main(void) {
+  std::fstream *file;
+  file->open("test.vis", std::ios::in);
+  VISInterpreter* interpreter = new VISInterpreter(file);
+  file->close();
+}
