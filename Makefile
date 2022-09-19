@@ -217,6 +217,60 @@ src/VISLexer.cpp.s:
 	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/VISLexer.cpp.s
 .PHONY : src/VISLexer.cpp.s
 
+src/VISTypes.o: src/VISTypes.cpp.o
+
+.PHONY : src/VISTypes.o
+
+# target to build an object file
+src/VISTypes.cpp.o:
+	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/VISTypes.cpp.o
+.PHONY : src/VISTypes.cpp.o
+
+src/VISTypes.i: src/VISTypes.cpp.i
+
+.PHONY : src/VISTypes.i
+
+# target to preprocess a source file
+src/VISTypes.cpp.i:
+	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/VISTypes.cpp.i
+.PHONY : src/VISTypes.cpp.i
+
+src/VISTypes.s: src/VISTypes.cpp.s
+
+.PHONY : src/VISTypes.s
+
+# target to generate assembly for a file
+src/VISTypes.cpp.s:
+	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/VISTypes.cpp.s
+.PHONY : src/VISTypes.cpp.s
+
+src/utils/string_utils.o: src/utils/string_utils.cpp.o
+
+.PHONY : src/utils/string_utils.o
+
+# target to build an object file
+src/utils/string_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/utils/string_utils.cpp.o
+.PHONY : src/utils/string_utils.cpp.o
+
+src/utils/string_utils.i: src/utils/string_utils.cpp.i
+
+.PHONY : src/utils/string_utils.i
+
+# target to preprocess a source file
+src/utils/string_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/utils/string_utils.cpp.i
+.PHONY : src/utils/string_utils.cpp.i
+
+src/utils/string_utils.s: src/utils/string_utils.cpp.s
+
+.PHONY : src/utils/string_utils.s
+
+# target to generate assembly for a file
+src/utils/string_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/VISL.dir/build.make CMakeFiles/VISL.dir/src/utils/string_utils.cpp.s
+.PHONY : src/utils/string_utils.cpp.s
+
 test/main.o: test/main.cpp.o
 
 .PHONY : test/main.o
@@ -263,6 +317,12 @@ help:
 	@echo "... src/VISLexer.o"
 	@echo "... src/VISLexer.i"
 	@echo "... src/VISLexer.s"
+	@echo "... src/VISTypes.o"
+	@echo "... src/VISTypes.i"
+	@echo "... src/VISTypes.s"
+	@echo "... src/utils/string_utils.o"
+	@echo "... src/utils/string_utils.i"
+	@echo "... src/utils/string_utils.s"
 	@echo "... test/main.o"
 	@echo "... test/main.i"
 	@echo "... test/main.s"

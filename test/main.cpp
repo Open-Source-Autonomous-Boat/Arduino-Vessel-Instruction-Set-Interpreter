@@ -10,5 +10,6 @@ int main(int argc, char** argv) {
   VISInterpreter* interpreter = new VISInterpreter(file);
   interpreter->start();
   interpreter->_DEBUG_printHeaderType();
+  interpreter->_DEBUG_printNavigationType();
   file.close();
 }

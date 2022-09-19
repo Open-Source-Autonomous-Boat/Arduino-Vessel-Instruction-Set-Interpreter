@@ -18,5 +18,15 @@
   "directory": "/home/troyd/Projects/VIS-Interpreter",
   "command": "/usr/bin/c++   -I/home/troyd/Projects/VIS-Interpreter/src    -std=gnu++2a -o CMakeFiles/VISL.dir/src/VISLexer.cpp.o -c /home/troyd/Projects/VIS-Interpreter/src/VISLexer.cpp",
   "file": "/home/troyd/Projects/VIS-Interpreter/src/VISLexer.cpp"
+},
+{
+  "directory": "/home/troyd/Projects/VIS-Interpreter",
+  "command": "/usr/bin/c++   -I/home/troyd/Projects/VIS-Interpreter/src    -std=gnu++2a -o CMakeFiles/VISL.dir/src/VISTypes.cpp.o -c /home/troyd/Projects/VIS-Interpreter/src/VISTypes.cpp",
+  "file": "/home/troyd/Projects/VIS-Interpreter/src/VISTypes.cpp"
+},
+{
+  "directory": "/home/troyd/Projects/VIS-Interpreter",
+  "command": "/usr/bin/c++   -I/home/troyd/Projects/VIS-Interpreter/src    -std=gnu++2a -o CMakeFiles/VISL.dir/src/utils/string_utils.cpp.o -c /home/troyd/Projects/VIS-Interpreter/src/utils/string_utils.cpp",
+  "file": "/home/troyd/Projects/VIS-Interpreter/src/utils/string_utils.cpp"
 }
 ]

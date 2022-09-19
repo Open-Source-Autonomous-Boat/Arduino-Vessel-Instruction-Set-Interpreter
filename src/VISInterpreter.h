@@ -17,6 +17,7 @@ public:
   void start();
 
   void _DEBUG_printHeaderType();
+  void _DEBUG_printNavigationType();
 
 private:
   std::vector<std::string> _format_lines();

@@ -1,6 +1,9 @@
 #include "VISInterpreter.h"
 #include "VISLexer.h"
+#include "utils/def_macros.h"
 #include <regex>
+#include <string>
+#include <algorithm>
 
 VISInterpreter::VISInterpreter(std::string a_line) { m_args.push_back(a_line); }
 
@@ -21,12 +24,12 @@ std::vector<std::string> VISInterpreter::_format_lines() {
   std::string temp_string;
 
   auto _strip_whiteline = [](std::string a_line) {
-    std::regex whitelines("(\\s)+");
-    return std::regex_replace(a_line, whitelines, ",");
+    a_line.erase(std::remove_if(a_line.begin(), a_line.end(), ::isspace), a_line.end());
   };
 
   for (auto &i : m_args) {
-    temp_string += (_strip_whiteline(i) + "\n");
+    _strip_whiteline(i);
+    temp_string += (i + "\n");
     if (i.ends_with(VISL_LINE_ENDING)) {
       formated_args.push_back(temp_string);
       temp_string = "";
@@ -42,4 +45,8 @@ void VISInterpreter::start() {
 
 void VISInterpreter::_DEBUG_printHeaderType() {
   std::cout << this->m_commands->getHeaderType() << std::endl;
+}
+
+void VISInterpreter::_DEBUG_printNavigationType() {
+  std::cout << this->m_commands->getNavigationMode() << std::endl;
 }

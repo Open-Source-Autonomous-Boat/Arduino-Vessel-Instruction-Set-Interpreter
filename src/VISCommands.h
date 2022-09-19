@@ -9,7 +9,7 @@ enum VISHeaderEnum {
   Data = 2,
 };
 
-typedef std::array<int, 3> VISWaypoint_t;
+typedef std::array<float, 3> VISWaypoint_t;
 
 
 class VISCommands {

@@ -2,16 +2,18 @@
 #include <vector>
 #pragma once
 
-class VISTypes {
+class VISType {
   std::vector<char> mBytes;
+  std::vector<float> mFloatBytes; /* I hate this */
   bool bEmpty;
 
 public:
-  VISTypes();
-  VISTypes(std::string aSource);
-  VISTypes(int aSource);
-  VISTypes(float aSource);
-  VISTypes(bool aSource);
+  VISType();
+  VISType(std::string aSource);
+  VISType(char* aSource);
+  VISType(int aSource);
+  VISType(float aSource);
+  VISType(bool aSource);
 
   /* GETTER */
   bool isEmpty() const;
@@ -31,7 +33,8 @@ public:
   bool toBool() const;
 
   /* STATIC */
-  static VISTypes fromVISLString(std::string aString);
+  static VISType fromVISLString(std::string aString);
+  static VISType storeFloat(std::string aString);
 
   /* OPERATOR */
   operator std::string() { return this->toSTLString(); }
