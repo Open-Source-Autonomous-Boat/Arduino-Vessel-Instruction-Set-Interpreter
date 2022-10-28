@@ -1,6 +1,7 @@
 #include "VISCommands.h"
 
-VISCommands::VISCommands() {}
+VISCommands::VISCommands() {
+}
 
 void VISCommands::setHeaderType(VISHeaderEnum aType) {
   this->mHeaderType = aType;

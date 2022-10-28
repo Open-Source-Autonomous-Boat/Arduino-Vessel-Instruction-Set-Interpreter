@@ -28,10 +28,6 @@ void VISLexer::Lex(std::string aLines) {
       std::cerr << "Not Implemented" << std::endl;
       throw std::logic_error{"Unimplemented! (W1)"};
     }
-    // int index = std::stoi(parameters.front());
-    // int latitude = std::stoi(parameters.at(1));
-    // int longtitude = std::stoi(parameters.at(2));
-    // int radius = std::stoi(parameters.at(3));
     auto index = VISType(parameters.front());
     auto latitude = VISType(parameters.at(1));
     auto longtitude = VISType(parameters.at(2));

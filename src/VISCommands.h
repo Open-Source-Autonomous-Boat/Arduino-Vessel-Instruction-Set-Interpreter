@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <array>
 #include <map>
 #pragma once
 
@@ -13,8 +14,8 @@ typedef std::array<float, 3> VISWaypoint_t;
 
 
 class VISCommands {
-  VISHeaderEnum mHeaderType;
-  int mNavigationMode;
+  VISHeaderEnum mHeaderType = VISHeaderEnum::Data;
+  int mNavigationMode = 0;
   std::map<int, VISWaypoint_t> mWaypoints;
   std::map<int, std::vector<std::string>> mPresets;
  public:

@@ -50,3 +50,7 @@ void VISInterpreter::_DEBUG_printHeaderType() {
 void VISInterpreter::_DEBUG_printNavigationType() {
   std::cout << this->m_commands->getNavigationMode() << std::endl;
 }
+
+void VISInterpreter::_DEBUG_printPresetCmd(int a_cmd) {
+  std::cout << "WIP" << std::endl;
+}

@@ -18,6 +18,7 @@ public:
 
   void _DEBUG_printHeaderType();
   void _DEBUG_printNavigationType();
+  void _DEBUG_printPresetCmd(int a_cmd);
 
 private:
   std::vector<std::string> _format_lines();
