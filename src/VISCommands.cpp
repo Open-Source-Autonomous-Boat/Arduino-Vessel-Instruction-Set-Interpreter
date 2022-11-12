@@ -1,5 +1,7 @@
 #include "VISCommands.h"
 
+#ifdef __cplusplus
+
 VISCommands::VISCommands() {
 }
 
@@ -42,3 +44,68 @@ std::vector<std::string> VISCommands::getPrefix(int aIndex) const {
 }
 
 void VISCommands::removePrefix(int aIndex) { this->mPresets.erase(aIndex); }
+
+/* C Lib */
+/* Functions */
+extern "C" {
+  cVISCommands_s* cVISCommands_s_new() {
+    return (cVISCommands_s*)(new VISCommands());
+  }
+  void cVISCommands_c_setHeaderType(cVISCommands_s* aData, VISHeaderEnum aHeader) {
+    VISCommands* comData = (VISCommands*)aData;
+    comData->setHeaderType(aHeader);
+  }
+  void cVISCommands_c_setHeaderType_raw(cVISCommands_s* aData, int aHeader) {
+    VISCommands* comData = (VISCommands*)(aData);
+    comData->setHeaderType(aHeader);
+  }
+  void cVISCommands_s_setNavigationMode(cVISCommands_s* aData, int aMode) {
+    VISCommands* comData = (VISCommands*)(aData);
+    comData->setNavigationMode(aMode);
+  }
+  int cVISCommands_s_getNavigationMode(cVISCommands_s* aData) {
+    VISCommands* comData = (VISCommands*)(aData);
+    return comData->getNavigationMode();
+  }
+  VISHeaderEnum cVISCommands_s_getHeaderType(cVISCommands_s* aData) {
+    VISCommands* comData = (VISCommands*)(aData);
+    return comData->getHeaderType();
+  }
+  void cVISCommands_s_setWaypoint(cVISCommands_s* aData, int aIndex, VISWaypoint_t aWaypoint) {
+    VISCommands* comData = (VISCommands*)(aData);
+    comData->setWaypoint(aIndex, aWaypoint);
+  }
+  void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, int aWaypoint[2]) {
+    VISCommands* comData = (VISCommands*)(aData);
+    VISWaypoint_t waypoint = {aWaypoint[0], aWaypoint[1], aWaypoint[2]};
+    comData->setWaypoint(aIndex, waypoint);
+  }
+  void cVISCommands_s_removeWaypoint(cVISCommands_s* aData, int aIndex) {
+    VISCommands* comData = (VISCommands*)(aData);
+    comData->removeWaypoint(aIndex);
+  }
+  void cVISCommands_s_setPrefix(cVISCommands_s* aData, int aIndex, char* aPrefix) {
+    VISCommands* comData = (VISCommands*)(aData);
+    comData->setPrefix(aIndex, aPrefix);
+  }
+  void cVISCommands_s_setPrefix_list(cVISCommands_s* aData, int aIndex, char** aPrefix, int aPrefixSize) {
+    VISCommands* comData = (VISCommands*)(aData);
+    std::vector<std::string> presets;
+    for (int i = 0; i < aPrefixSize; ++i) {
+      std::string newPrefix(aPrefix[i]);
+      presets.push_back(newPrefix);
+    }
+    comData->setPrefix(aIndex, presets);
+  }
+  void cVISCommands_s_removePrefix(cVISCommands_s* aData, int aIndex) {
+    VISCommands* comData = (VISCommands*)(aData);
+    comData->removePrefix(aIndex);
+  }
+  char** cVISCommands_s_getPrefix(cVISCommands_s* aData, int aIndex) {
+    VISCommands* comData = (VISCommands*)(aData);
+    std::vector<std::string> prefixes = comData->getPrefix(aIndex);
+  }
+}
+
+
+#endif
