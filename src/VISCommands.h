@@ -3,6 +3,7 @@
 #include <vector>
 #include <array>
 #include <map>
+#include "utils/def_macros.h"
 #endif
 #pragma once
 
@@ -49,19 +50,19 @@ typedef struct cVISCommands_s {
 
 /* Functions */
 extern "C" {
-  cVISCommands_s* cVISCommands_s_new();
-  void cVISCommands_s_setHeaderType(cVISCommands_s* aData, VISHeaderEnum aHeader);
-  void cVISCommands_s_setHeaderType_raw(cVISCommands_s* aData, VISHeaderEnum aHeader);
-  void cVISCommands_s_setNavigationMode(cVISCommands_s* aData, int aMode);
-  int cVISCommands_s_getNavigationMode(cVISCommands_s* aData);
-  VISHeaderEnum cVISCommands_s_getHeaderType(cVISCommands_s* aData);
-  void cVISCommands_s_setWaypoint(cVISCommands_s* aData, int aIndex, VISWaypoint_t aWaypoint);
-  void cVISCommands_s_removeWaypoint(cVISCommands_s* aData, int aIndex);
-  void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, int aWaypoint[2]);
-  void cVISCommands_s_setPrefix(cVISCommands_s* aData, int aIndex, char* aPrefix);
-  void cVISCommands_s_setPrefix_list(cVISCommands_s* aData, int aIndex, char** aPrefix, int aPrefixSize);
-  void cVISCommands_s_removePrefix(cVISCommands_s* aData, int aIndex);
-  char** cVISCommands_s_getPrefix(cVISCommands_s*, int aIndex);
+  EXPORT cVISCommands_s* cVISCommands_s_new();
+  EXPORT void cVISCommands_s_setHeaderType(cVISCommands_s* aData, VISHeaderEnum aHeader);
+  EXPORT void cVISCommands_s_setHeaderType_raw(cVISCommands_s* aData, VISHeaderEnum aHeader);
+  EXPORT void cVISCommands_s_setNavigationMode(cVISCommands_s* aData, int aMode);
+  EXPORT int cVISCommands_s_getNavigationMode(cVISCommands_s* aData);
+  EXPORT VISHeaderEnum cVISCommands_s_getHeaderType(cVISCommands_s* aData);
+  EXPORT void cVISCommands_s_setWaypoint(cVISCommands_s* aData, int aIndex, VISWaypoint_t aWaypoint);
+  EXPORT void cVISCommands_s_removeWaypoint(cVISCommands_s* aData, int aIndex);
+  EXPORT void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, int aWaypoint[2]);
+  EXPORT void cVISCommands_s_setPrefix(cVISCommands_s* aData, int aIndex, char* aPrefix);
+  EXPORT void cVISCommands_s_setPrefix_list(cVISCommands_s* aData, int aIndex, char** aPrefix, int aPrefixSize);
+  EXPORT void cVISCommands_s_removePrefix(cVISCommands_s* aData, int aIndex);
+  EXPORT char** cVISCommands_s_getPrefix(cVISCommands_s*, int aIndex);
 }
 
 #ifdef __cplusplus

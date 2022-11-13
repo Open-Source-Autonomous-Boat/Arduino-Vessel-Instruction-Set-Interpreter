@@ -51,7 +51,7 @@ extern "C" {
   cVISCommands_s* cVISCommands_s_new() {
     return (cVISCommands_s*)(new VISCommands());
   }
-  void cVISCommands_c_setHeaderType(cVISCommands_s* aData, VISHeaderEnum aHeader) {
+ void cVISCommands_c_setHeaderType(cVISCommands_s* aData, VISHeaderEnum aHeader) {
     VISCommands* comData = (VISCommands*)aData;
     comData->setHeaderType(aHeader);
   }
