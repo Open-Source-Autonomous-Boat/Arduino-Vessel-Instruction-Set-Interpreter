@@ -75,7 +75,7 @@ extern "C" {
     VISCommands* comData = (VISCommands*)(aData);
     comData->setWaypoint(aIndex, aWaypoint);
   }
-  void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, int aWaypoint[2]) {
+  void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, float aWaypoint[2]) {
     VISCommands* comData = (VISCommands*)(aData);
     VISWaypoint_t waypoint = {aWaypoint[0], aWaypoint[1], aWaypoint[2]};
     comData->setWaypoint(aIndex, waypoint);
@@ -104,6 +104,12 @@ extern "C" {
   char** cVISCommands_s_getPrefix(cVISCommands_s* aData, int aIndex) {
     VISCommands* comData = (VISCommands*)(aData);
     std::vector<std::string> prefixes = comData->getPrefix(aIndex);
+    int size = prefixes.size();
+    char** array = new char* [size+1];
+    for (int i = 0; i <= prefixes.size(); ++i) {
+      array[i] = const_cast<char*>(prefixes.at(i).c_str());
+    }
+    return array;
   }
 }
 

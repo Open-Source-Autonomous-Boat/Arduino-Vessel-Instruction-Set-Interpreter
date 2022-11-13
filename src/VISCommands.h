@@ -58,7 +58,7 @@ extern "C" {
   EXPORT VISHeaderEnum cVISCommands_s_getHeaderType(cVISCommands_s* aData);
   EXPORT void cVISCommands_s_setWaypoint(cVISCommands_s* aData, int aIndex, VISWaypoint_t aWaypoint);
   EXPORT void cVISCommands_s_removeWaypoint(cVISCommands_s* aData, int aIndex);
-  EXPORT void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, int aWaypoint[2]);
+  EXPORT void cVISCommands_s_setWaypoint_raw(cVISCommands_s* aData, int aIndex, float aWaypoint[2]);
   EXPORT void cVISCommands_s_setPrefix(cVISCommands_s* aData, int aIndex, char* aPrefix);
   EXPORT void cVISCommands_s_setPrefix_list(cVISCommands_s* aData, int aIndex, char** aPrefix, int aPrefixSize);
   EXPORT void cVISCommands_s_removePrefix(cVISCommands_s* aData, int aIndex);
